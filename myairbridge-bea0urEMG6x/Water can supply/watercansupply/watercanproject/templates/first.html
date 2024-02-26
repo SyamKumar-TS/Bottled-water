@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="topnav">
+       <div class="loginlink">
+            <a href="logout" style="color: blueviolet">Logout</a>
+        </div>
+    </div>
+
+    <div class="bottomnav">
+        <div class="navheadimg">
+            <img src="{% static 'images/nav.png' %}">
+        </div>
+        <div class="navheading">
+            <h3>BOTTLED WATER FACTORY</h3>
+        </div>
+        <div class="navheadnews">
+            <a href="https://en.wikipedia.org/wiki/Bottled_water#References" style="color: white">News</a>
+        </div>
+        <div class="navheadregulations">
+            <a href="https://en.wikipedia.org/wiki/Bottled_water#Regulation" style="color: white">Regulations</a>
+        </div>
+        <div class="navheadhelth">
+            <a href="https://en.wikipedia.org/wiki/Drinking_water" style="color: white">Health</a>
+        </div>
+        <div class="navheadabout">
+            <a href="https://en.wikipedia.org/wiki/Bottled_water" style="color: white">About</a>
+        </div>
+    </div>
+    <div class="mainimage">
+        <div class="mainimg">
+            <img src="{% static 'images/hero2@2x-1.jpg' %}">
+        </div>
+        <div class="mainimghead">
+            <h5> BOTTLED WATER<br> THERE WHEN YOU NEED IT</h5>
+        </div> 
+    </div>
+
+    <div class="buynowbtn">
+        <a class="btn btn-primary" href="buy">BUY NOW</a>
+    </div>
+
+    <div class="perimg">
+        <h1 class="perhead">India's Favorite Packaged Drink</h1>
+        <img src="{% static 'images/Untitled design.png' %}">
+    </div>
+
+    <div class="maincontent">
+        <div class="content1">
+            <h5 style='color:blue;'>HISTORY</h5><br>
+            <p style="color:gray;">Although vessels to bottle and transport water were part of the earliest human civilizations,[1] bottling water began in the United Kingdom with the first water bottling at the Holy Well in 1622.[2][3] The demand for bottled water was fueled in large part by the resurgence in spa-going and water therapy among Europeans and American colonists in the 17th and 18th centuries.[4] 'Bristol Water' taken from the spa at Hotwells was one of the first drinking waters to be bottled and marketed widely. Daniel Defoe noted in 1724 that there were over 15 glass-houses in Bristol, "which are more than in London...and vast numbers of bottles are used for sending the water of the Hotwell not only over England but all over the world."[5] The first commercially distributed water in America was bottled and sold by Jackson's Spa in Boston in 1767.[6] Early drinkers of bottled spa waters believed that the water at these mineral springs had therapeutic properties and that bathing in or drinking the water could help treat many common ailments.[4]</p>
+        </div>
+        <div class="content2">
+            <div class="d1">
+                <h5 style='color:blue;'>Environment</h5>
+                <p style="color:gray;">The bottled water industry is a strong supporter of our environment and our natural resources. Bottled water companies manage resources responsibly by investing in technology and practices that improve water quality and conservation. Bottled water’s environmental footprint is the lowest of any packaged beverage. Research shows that bottled water is the most environmentally responsible packaged drink choice.</p>
+            </div>
+            <div class="d2">
+                <h5 style='color:blue;'>Health</h5>
+                <p style="color:gray;">One of the simplest healthy lifestyle changes you can make is to drink water instead of sugar-sweetened beverages. In today’s on-the-go society, where most of what we drink comes in a package, bottled water is the smart choice to help eliminate or moderate calories, sugar, caffeine, artificial flavors or colors, and other ingredients from your diet.</p>
+            </div>
+        </div>
+    </div>
+    <div class="firstordcom">
+        <div class="firsttab1">
+            <label>Your Orders</label>
+            <table class="table caption-top">
+                <tr>
+                    <th scope="col" style="text-align:center;">Name</th>
+                    <th scope="col" style="text-align:center;">Adress</th>
+                    <th scope="col" style="text-align:center;">phone Number</th>
+                    <th scope="col" style="text-align:center;">Qantity</th>
+                    <th scope="col" style="text-align:center;">Date</th>
+                    <th scope="col" style="text-align:center;">Price</th>
+                    <th scope="col" style="text-align:center;">Update</th>
+                    <th scope="col" style="text-align:center;">Cancel</th>
+                    <th scope="col" style="text-align:center;">Payment</th>
+                </tr>
+                {% for i in inf %}
+                    <tr>
+                        <td scope="col" style="text-align:center;">{{i.name}}</td>
+                        <td scope="col" style="text-align:center;">{{i.address}}</td>
+                        <td scope="col" style="text-align:center;">{{i.phone_number}}</td>
+                        <td scope="col" style="text-align:center;">{{i.quantity}}</td>
+                        <td scope="col" style="text-align:center;">{{i.date}}</td>
+                        <td scope="col" style="text-align:center;">{{i.amount}}</td>
+                        <td scope="col" style="text-align:center;"><a class="btn btn-outline-warning" href="{% url 'update_odr' i.id %}">Update</a></td>
+                        <td scope="col" style="text-align:center;"><a class="btn btn-outline-danger" href="{% url 'cancel_odr' i.id %}">Cancel</a></td>
+                        {% if i.payment_status %}
+                            <td scope="col" style="text-align:center; color:green">Completed</td>
+                        {% else %}
+                            <td scope="col" style="text-align:center;"><a class="btn btn-outline-success" href="{% url 'payment' i.id %}">Payment</a></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="firsttab2">
+            <label>Order History</label>
+            <table class="table caption-top">
+                <tr>
+                    <th scope="col" style="text-align:center;">Name</th>
+                    <th scope="col" style="text-align:center;">Adress</th>
+                    <th scope="col" style="text-align:center;">phone Number</th>
+                    <th scope="col" style="text-align:center;">Qantity</th>
+                    <th scope="col" style="text-align:center;">Price</th>
+                    <th scope="col" style="text-align:center;">Action</th>
+                </tr>
+                {% for j in can_odr %}
+                <tr>
+                    <td scope="col" style="text-align:center;">{{j.name}}</td>
+                    <td scope="col" style="text-align:center;">{{j.adress}}</td>
+                    <td scope="col" style="text-align:center;">{{j.phone_no}}</td>
+                    <td scope="col" style="text-align:center;">{{j.quantity}}</td>
+                    <td scope="col" style="text-align:center;">{{j.amount}}</td>
+                    <td scope="col" style="text-align:center;color:red;">Cancelled</td>
+                </tr>
+                {% endfor %}
+                {% for j in com_can %}
+                <tr>
+                    <td scope="col" style="text-align:center;">{{j.name}}</td>
+                    <td scope="col" style="text-align:center;">{{j.address}}</td>
+                    <td scope="col" style="text-align:center;">{{j.phone_number}}</td>
+                    <td scope="col" style="text-align:center;">{{j.quantity}}</td>
+                    <td scope="col" style="text-align:center;">{{j.amount}}</td>
+                    <td scope="col" style="text-align:center;color:orange;">Cancelled</td>
+                </tr>
+                {% endfor %}
+                {% for j in com_del %}
+                <tr>
+                    <td scope="col" style="text-align:center;">{{j.name}}</td>
+                    <td scope="col" style="text-align:center;">{{j.address}}</td>
+                    <td scope="col" style="text-align:center;">{{j.phone_number}}</td>
+                    <td scope="col" style="text-align:center;">{{j.quantity}}</td>
+                    <td scope="col" style="text-align:center;">{{j.amount}}</td>
+                    <td scope="col" style="text-align:center;color:green;">Delivered</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <div class="topfooter">
+            <h4 style="text-align:center; color:white;">Contact Us</h4>
+        <div class="footerdiv1">
+            <form method='post' action="contact">
+                <input type="text" name="name" placeholder="Your Name" required><br>
+                <input type="text" name="contact_number" placeholder="Your Contact Number" required><br>
+                <input type="text" name="email" placeholder="Your Email" required><br><br>
+                <input class="btn btn-outline-success" type="submit">
+            </form>
+        </div>
+    <div>
+
+    <div class="bottomfooter">
+        <p class="bottomfooterp">Terms & Conditions | Privacy Policy|Copyright © 2023.</p>
+    </div>
+</body>
+</html>
+
+
